@@ -15,23 +15,32 @@ body {
 
 
 .container {
+
+    /* Posição da calculadora na página*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
-    background-color: #414141;;
 
+    
+    /* Tamanho da calculadora na página */
     width: 300px;
     height: 450px;
 
+
+    /* Estilizando texto da calculadora */
     font-family: 'Roboto Mono', monospace;
     color: white;
     text-transform: uppercase;
     
+    /* Estilizando bordas da calculadora */
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.322);
-    
     border-radius: 5px;
+
+
+
+
 
     /* Definindo o grid no container*/
     display: grid;
@@ -39,21 +48,30 @@ body {
     /*Definindo que são 4 colunas ocupando 1 fração do espaço total do container, ou seja 1/4 */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     
-   
-    
 }
 
+/* Estilizando o botão dos operadores*/
+.operador {
+    background-color: #4fb98b;
+}
+
+
+/* Estilizando o botão dos números e demais botões*/
 .numeros {
     background-color: black;
 }
 
 
 
+/* Os códigos abaixo se referem a organização dos botões presentes na calculadora por meio do (display-grid)*/
+
 #print {
     grid-column-start: 1;
     grid-column-end: 5;
     background-color: #303030;
-    border-radius: 8px;
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 .ac {
@@ -121,10 +139,4 @@ body {
 
 
 
-
-
-
-.operador {
-    background-color: #4fb98b;
-}
 
