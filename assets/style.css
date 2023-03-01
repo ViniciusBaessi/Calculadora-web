@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(246deg, #4bf1ac, #143d2c);
+
+    position: relative;
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: #414141;;
+
+    width: 300px;
+    height: 450px;
+
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    text-transform: uppercase;
+    
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.322);
+    
+    border-radius: 5px;
+
+    /* Definindo o grid no container*/
+    display: grid;
+
+    /*Definindo que são 4 colunas ocupando 1 fração do espaço total do container, ou seja 1/4 */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+   
+    
+}
+
+.numeros {
+    background-color: black;
+}
+
+
+
+#print {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    background-color: #303030;
+    border-radius: 8px;
+}
+
+.ac {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(0, 0, 0);
+}
+
+.del {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: black;
+}
+
+
+#div {
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#mult {
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+#mais {
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+#menos {
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+
+#igual {
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    grid-row-start: 6;
+    grid-row-end: 7;
+
+    border-bottom-right-radius: 5px;
+}
+
+#ponto {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-bottom-left-radius: 5px;
+}
+
+
+
+
+
+
+.operador {
+    background-color: #4fb98b;
+}
+
