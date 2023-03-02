@@ -20,6 +20,8 @@ var array2 = []
 //O (foreach) percorre todos os numeros da página e adiciona um ouvinte que vai capturar o clique. 
 
 function PegarNumero () {
+
+
     numeros.forEach(input => {
         input.addEventListener('click', (event) => {
         
@@ -64,22 +66,12 @@ function PegarNumero () {
 
 
 
-            
+                          
             
         });
 
     });
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
