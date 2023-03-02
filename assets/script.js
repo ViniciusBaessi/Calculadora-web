@@ -13,6 +13,7 @@ let i = 0
 var array1 = []
 var array2 = []
 
+let valor1
 
 
 //Criando uma função que captura os eventos da página, no caso o clique. 
@@ -20,6 +21,7 @@ var array2 = []
 //O (foreach) percorre todos os numeros da página e adiciona um ouvinte que vai capturar o clique. 
 
 function PegarNumero () {
+    
     numeros.forEach(input => {
         input.addEventListener('click', (event) => {
         
@@ -58,28 +60,20 @@ function PegarNumero () {
             //Os valores do array serão concatenados e armazenados na variável (valor1)
 
             // O comando .join("") faz a concatenação e as ("") indica que não haverá espaços durante a concatenação.
-            var valor1 = array1.join("")
+            valor1 = array1.join("")
             console.log(`O valor total é ${valor1}`)
-
-
-
-
             
-            
+
+
+           
         });
-
+        
     });
+    
 }
 
 
-
-
-
-
-
-
-
-
+console.log(`O valor total é ${valor1}`);
 
 
 
@@ -114,5 +108,4 @@ function PegarOperador () {
     });
 }
 
-PegarNumero ()
-PegarOperador ()
+

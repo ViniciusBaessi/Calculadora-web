@@ -65,6 +65,15 @@ body {
 }
 
 
+.resultado {
+    background-color: #4fb98b;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* Estilizando o botão dos números e demais botões*/
 .numeros {
     background-color: black;
