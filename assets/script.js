@@ -1,4 +1,4 @@
-var res = document.getElementById('print')
+let res = document.getElementById('print')
 
 //Linkando todos os (numeros) da página
 const input = document.querySelectorAll('input');
@@ -9,17 +9,18 @@ const operadores = document.querySelectorAll('.operador');
 
 //Contador
 let i = 0
+
 let aux
 
 let operador
 
-var array1 = []
-var array2 = []
+let array1 = []
+let array2 = []
 
 let valor1
 let valor2
 
-let valorGlobal;
+
 
 //Criando uma função que captura os eventos da página, no caso o clique. 
 
@@ -31,43 +32,21 @@ function Clique () {
     input.forEach(input => {
         input.addEventListener('click', (event) => {
         
-            //Se houver de fato um clique, o valor do botão é armazenando na variável (botaonum)
+            //Se houver de fato um clique, o valor do botão é armazenando na letiável (botaonum)
             let botaonum = event.target.value
 
             
             val1 (botaonum)
 
-            
-
-
-            
-            if (isNaN(valor1)) {
-            
-
-                valor1 = aux.slice(0, -1)
-                operador = aux.slice(-1)
-            }
-            
-
-
-            
-
-            
+        
             console.log(valor1)
-            console.log(operador)
-            console.log(valor2)
-            console.log(aux)
-
+            console.log(`Esse é o operador ${operador}`)
             
-            
-            
+            console.log(`Esse é o aux ${aux}`)
 
+            console.log(`Esse é o i ${i}`)
 
-
-
-
-
-
+    
 
 
         });
@@ -79,97 +58,69 @@ function Clique () {
 
 
 
-function validar (a) {
-
-        valor1 = aux.slice(0, -1)
-        operador = aux.slice(-1)
-        
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function val1  (a) {
+    
+    //Se o botão (ac) for clicado, a página será recarregada, fazendo com que os dados sejam limpos
+        if (a == "ac") {
+            a = a.replace("ac", "")
+            location.reload()
+    }
 
-
-
-    if (a == "ac") {
-        a = a.replace("ac", "")
-        location.reload()
-}
-
-
-
-//Inserindo o valor do botão em um indice do array
-array1[i] = a;
-            
-//Linpando o console
-console.clear()
-
-//Printando o valor do botão para que o usuário possa visualizar
-res.innerHTML += `${a}`
-
-
-//Atualizando o contador
-i++
-
-
-//Os valores do array serão concatenados e armazenados na variável (valor1)
-
-// O comando .join("") faz a concatenação e as ("") indica que não haverá espaços durante a concatenação.
-aux = array1.join("")
-
-//Converte os valores para number pois estavam como string
-valor1 = Number(aux)
-
-
-
-
-}
-
-
-
-
-
-
-
-function val2  (a) {
     //Inserindo o valor do botão em um indice do array
-array2[i] = a;
-            
-//Linpando o console
-console.clear()
+    array1[i] = a;
+    
 
-//Printando o valor do botão para que o usuário possa visualizar
-res.innerHTML += `${a}`
+    //Atualizando o contador
+    i++
 
-
-//Atualizando o contador
-i++
+    //Linpando o console
+    console.clear()
 
 
-//Os valores do array serão concatenados e armazenados na variável (valor1)
+    //Se o usuário clicar no botão del, será excluido dois valores do array. O del prórpiamente que foi alocado de forma automática e o valor que já estava lá. 
 
-// O comando .join("") faz a concatenação e as ("") indica que não haverá espaços durante a concatenação.
-aux = array2.join("")
+    if (a == "del") {
+        array1.splice(array1.length - 2, 2);
+        i = i-2
+    }
 
-//Converte os valores para number pois estavam como string
-valor2 = Number(aux)
+
+    //Os valores do array serão concatenados e armazenados na letiável (valor1)
+
+    // O comando .join("") faz a concatenação e as ("") indica que não haverá espaços durante a concatenação.
+    aux = array1.join("")
+
+
+    valor1 = aux
+
+
+    //Printando o valor do botão para que o usuário possa visualizar
+    res.innerHTML = `${valor1}`
+
+
+
+
+
+    //Pegando os operadores ------------------------
+
+
+    if (a == "÷" || a == "+" || a == "-" || a == "*") {
+        valor1 = aux.slice(0, -1)
+        operador = aux.slice(-1)
+
+    }
+
+
+
+
+    
+
+  //Converte os valores para number pois estavam como string
+    valor1 = Number(valor1)
+    
 }
-
 
 
 Clique ()
@@ -192,41 +143,6 @@ Clique ()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*function PegarOperador () {
-    operadores.forEach(input => {
-        input.addEventListener('click', (event) => {
-        
-            //Se houver de fato um clique, o valor do botão é armazenando na variável (botaonum) e em seguinda o valor desta variável é printado no console
-
-            const botaooper = event.target.value
-            console.log(`O botão clicado é ${botaooper}`)
-
-
-
-
-            
-
-
-            res.innerHTML += `${botaooper}`
-
-            
-
-        });
-
-    });
-}*/
 
 
 
