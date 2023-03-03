@@ -41,12 +41,13 @@ function Clique () {
 
 
 
-            if (operador !== undefined) {
-                botaonum = ""
-                i = 0
-                val2 (botaonum)
-            }
 
+
+            //COMEÇAR DAQUI
+            if (operador) {
+               
+                val2 (botaonum);
+              }
 
 
 
