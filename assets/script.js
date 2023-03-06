@@ -10,7 +10,7 @@ const operadores = document.querySelectorAll('.operador');
 //Contador
 let i = 0
 
-let aux
+let aux = ""
 let aux2
 
 let operador
@@ -37,17 +37,24 @@ function Clique () {
             let botaonum = event.target.value
 
             
-            val1 (botaonum)
+            
 
 
 
 
 
             //COMEÇAR DAQUI
-            if (operador) {
+            if (operador != undefined) {
+
                
                 val2 (botaonum);
+              } 
+              
+              
+              else {
+                val1 (botaonum)
               }
+              
 
 
 
@@ -101,6 +108,8 @@ function val1  (a) {
     if (a == "del") {
         array1.splice(array1.length - 2, 2);
         i = i-2
+
+        aux = aux.slice(0, -1)
     }
 
 
@@ -152,15 +161,18 @@ function val2 (b) {
             location.reload()
     }
 
+
+    
+
     //Inserindo o valor do botão em um indice do array
-    array2[i] = b;
+    array2[i] += b;
     
 
     //Atualizando o contador
     i++
 
     //Linpando o console
-    //console.clear()
+    console.clear()
 
 
     //Se o usuário clicar no botão del, será excluido dois valores do array. O del prórpiamente que foi alocado de forma automática e o valor que já estava lá. 
@@ -168,30 +180,42 @@ function val2 (b) {
     if (b == "del") {
         array2.splice(array2.length - 2, 2);
         i = i-2
+        aux = aux.slice(0, -1)
     }
 
+
+    
 
     //Os valores do array serão concatenados e armazenados na letiável (valor1)
 
     // O comando .join("") faz a concatenação e as ("") indica que não haverá espaços durante a concatenação.
-    aux2 = array2.join("")
+    aux += array2.join("")
 
-
-    valor2 = aux2
-
-
-    //Printando o valor do botão para que o usuário possa visualizar
-    res.innerHTML += `${valor2}`
-
-
-
-    //Pegando os operadores ------------------------
-    if (b == "÷" || b == "+" || b == "-" || b == "*") {
-        res.innerHTML = `Erro: Não pode executar mais de um operador`
-
+    if (isNaN(aux)) {
+        aux = aux.slice(0, -1)
     }
 
 
+    valor2 = aux
+
+    
+    //Printando o valor do botão para que o usuário possa visualizar
+
+    
+    res.innerHTML = `${aux}`
+
+    
+
+    //Pegando os operadores ------------------------
+    if (b == "÷" || b == "+" || b == "-" || b == "*") {
+
+        window.alert("ERRO: Função para cálculo de multiplos operadores ou equações avançadas está indisponível");
+
+        res.innerHTML = `Erro`
+        location.reload()
+    }
+
+    
   //Converte os valores para number pois estavam como string
     valor2 = Number(valor2)
     
