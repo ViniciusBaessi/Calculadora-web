@@ -11,6 +11,7 @@ body {
     background: linear-gradient(246deg, #4bf1ac, #143d2c);
 
     position: relative;
+    display: flex;
 }
 
 
@@ -131,6 +132,7 @@ body {
     padding-bottom: 12px;
 
     font-size: 28px;
+    cursor: text;
     
 }
 
@@ -203,5 +205,52 @@ body {
 }
 
 
+@keyframes pisca {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+#print::after {
+    content: '|';
+    padding: 0px;
+    margin: 0px;
+    font-size: 31px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
 
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    padding: 30px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-style: italic;
+    
+}
+
+strong::before {
+    content: "";
+}
+strong {
+    padding-left: 0.4em;
+    text-decoration: underline;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    footer {
+        font-size: 18px;
+        padding: 40px;
+        
+    }
+
+}
