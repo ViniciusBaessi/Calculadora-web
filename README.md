@@ -1,4 +1,4 @@
-# Calculadora web (HTML + CSS + Javascript) 🖩
+# Calculadora web (HTML + CSS + Javascript) 📲
 
 ⚡ Criação de uma calculadora web simples, para cálculo das quatro operações básicas.
 
