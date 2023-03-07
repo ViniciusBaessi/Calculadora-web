@@ -232,7 +232,7 @@ footer {
     padding: 30px;
     color: white;
     font-family: 'Roboto Mono', monospace;
-    font-style: italic;
+    
     
 }
 
@@ -242,6 +242,7 @@ strong::before {
 strong {
     padding-left: 0.4em;
     text-decoration: underline;
+    font-style: italic;
 }
 
 
