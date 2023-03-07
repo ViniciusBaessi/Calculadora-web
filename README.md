@@ -2,7 +2,7 @@
 
 ⚡ Criação de uma calculadora web simples, para cálculo das quatro operações básicas.
 
-📲 Acesse em: ...
+📲 Acesse em: https://calculadora-web-beta.vercel.app/
 
 📄 Feito apenas com HTML, CSS e Javascript
 
