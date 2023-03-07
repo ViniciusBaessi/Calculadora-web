@@ -7,23 +7,15 @@ const input = document.querySelectorAll('input');
 //Linkando todos os operadores da página
 const operadores = document.querySelectorAll('.operador');
 
-
-
 let aux = ""
 let aux2 = ""
 
 let operador
 
-
-
 let valor1
 let valor2
 
 let resultado 
-
-
-
-
 
 
 //Criando uma função que captura os eventos da página, no caso o clique. 
@@ -35,10 +27,9 @@ function Clique () {
 
     input.forEach(input => {
         input.addEventListener('click', (event) => {
-        
-           
+      
 
-            //Se houver de fato um clique, o valor do botão é armazenando na letiável (botaonum)
+            //Se houver de fato um clique, o valor do botão é armazenando na variável (botaonum)
             let botaonum = event.target.value
 
 
@@ -70,7 +61,6 @@ function Clique () {
               }
 
 
-
               //Se o usuário clicar primeiro no operador ao invés de selecionar um número, aparece um erro na tela
               if(operador != undefined && valor1 == 0) {
                 
@@ -78,9 +68,6 @@ function Clique () {
 
                 location.reload()
             }
-
-
-
 
 
                //Converte os valores para number pois estavam como string
@@ -113,22 +100,15 @@ function Clique () {
                 resultado = valor1 * valor2
                 res.innerHTML = `${resultado}`
               }
-
-             
+     
               
-           
-
-
+        
             // APresentando valores no console, útil quando utiliza a ferramenta de desenvolvedor no navegador
             console.log(valor1)
             console.log(`Esse é o aux ${aux}`)
             console.log(operador)
             console.log(valor2)
             console.log(resultado)
-
-            
-    
-           
 
         });
 
@@ -185,9 +165,6 @@ function val1  (a) {
 }
 
 
-
-
-
 function val2 (b) {
 
   //Se o botão (ac) for clicado, a página será recarregada, fazendo com que os dados sejam limpos
@@ -239,4 +216,3 @@ function val2 (b) {
 
 //Chamando a função clique que executará toda a linha de código para o funcionamento da calculadora
 Clique ()
-
